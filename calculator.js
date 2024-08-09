@@ -18,7 +18,7 @@ const buttons = [
     'C', '7', '8', '9', '/', 
     '4', '5', '6', '*', 
     '1', '2', '3', '-', 
-    '0', '.', '=', '+'
+    '+', '0', '.', '='
 ];
 
 // Reference to the display input field
@@ -29,12 +29,24 @@ const buttonsContainer = document.getElementById('buttons');
 
 buttons.forEach(button => {
     const buttonElement = document.createElement('button');
+    
+    // Set the button text
     buttonElement.textContent = button;
-    buttonElement.className = 'button';
+    
+    // Add the base button class
+    buttonElement.classList.add('button');
+    
+    // Conditionally add the 'equals' class if the button text is "="
+    if (button === "=") {
+        buttonElement.classList.add('equals');
+    } else if (['+', '-', '*', '/'].includes(button)) {
+        buttonElement.classList.add('operators');
+    }
     
     // Add the button to the container
     buttonsContainer.appendChild(buttonElement);
 
+    // Add event listener for button click
     buttonElement.addEventListener('click', () => handleButtonClick(button));
 });
 
