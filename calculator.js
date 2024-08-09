@@ -41,6 +41,8 @@ buttons.forEach(button => {
         buttonElement.classList.add('equals');
     } else if (['+', '-', '*', '/'].includes(button)) {
         buttonElement.classList.add('operators');
+    } else if (button === "C") {
+        buttonElement.classList.add('clear');
     }
     
     // Add the button to the container

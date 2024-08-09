@@ -77,11 +77,16 @@ button:focus {
 
 button.equals {
     flex: 1;
-    background: white;
+    background: rgb(192, 190, 190);
     color: black;
 }
 
 button.operators {
     background: green;
+    color: white;
+}
+
+button.clear {
+    background: red;
     color: white;
 }
